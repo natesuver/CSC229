@@ -12,6 +12,7 @@ public class MainRunner {
 		 Restaurant myFavorite = new Restaurant("Bills Burgers","100 Main St");
 		 myFavorite.setRating(5);
 	     System.out.println(myFavorite.getDescription());
+	     
 	     //Liskov Substitution Problem
 	     //https://oowisdom.csse.canterbury.ac.nz/index.php/Liskov_substitution_principle
 	     Rectangle rect = new Rectangle();
@@ -23,6 +24,8 @@ public class MainRunner {
 	     square.setHeight(4);
 	     square.setWidth(5);
 	     System.out.println("Area of Square " + square.area());
+	     
+	     //Inventory
 	}
 
 }
