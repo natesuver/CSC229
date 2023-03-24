@@ -126,7 +126,8 @@ public class Tesla {
  // toString method
     @Override
     public String toString() {
-        return "Model Trim: " + modelTrim +
+        return "This is a Tesla -> " +
+        		"\nModel Trim: " + modelTrim +
                 "\nPurchase Year: " + year +
                 "\nPrice: " + price +
                 "\nTire Brand: " + tireBrand +
