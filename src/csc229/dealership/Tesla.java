@@ -43,11 +43,11 @@ public class Tesla {
         this.modelTrim = modelTrim;
     }
 
-    public int getYear() {
+    public int getPurchaseYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setPurchaseYear(int year) {
         this.year = year;
     }
 
@@ -127,7 +127,7 @@ public class Tesla {
     @Override
     public String toString() {
         return "Model Trim: " + modelTrim +
-                "\nYear: " + year +
+                "\nPurchase Year: " + year +
                 "\nPrice: " + price +
                 "\nTire Brand: " + tireBrand +
                 "\nTop Speed: " + topSpeed +

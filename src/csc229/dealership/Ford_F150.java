@@ -47,11 +47,11 @@ public class Ford_F150 {
         this.modelTrim = modelTrim;
     }
 
-    public int getYear() {
+    public int getPurchaseYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setPurchaseYear(int year) {
         this.year = year;
     }
 
@@ -154,7 +154,7 @@ public class Ford_F150 {
     public String toString() {
         return "This is a Ford F150 -> " +
         		"\nModel Trim: " + modelTrim +
-                "\nYear: " + year +
+                "\nPurchase Year: " + year +
                 "\nPrice: " + price +
                 "\nTire Brand: " + tireBrand +
                 "\nTransmission Type: " + transmissionType +

@@ -40,11 +40,11 @@ public class LateModelHonda {
         this.modelTrim = modelTrim;
     }
 
-    public int getYear() {
+    public int getPurchaseYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setPurchaseYear(int year) {
         this.year = year;
     }
 
@@ -115,7 +115,7 @@ public class LateModelHonda {
     public String toString() {
     	return "This is a Late Model Honda -> " +
         		"\nModel Trim: " + modelTrim +
-                "\nYear: " + year +
+                "\nPurchase Year: " + year +
                 "\nPrice: " + price +
                 "\nTire Brand: " + tireBrand +
                 "\nTransmission Type: " + transmissionType +
