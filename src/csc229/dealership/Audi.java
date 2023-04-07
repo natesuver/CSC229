@@ -1,8 +1,8 @@
 package csc229.dealership;
 
-public class Audi {
+public class Audi extends Vehicle {
 
-    private String modelTrim;
+
     private int year;
     private double price;
     private String tireBrand;
@@ -36,13 +36,6 @@ public class Audi {
     }
 
     // Getters and setters
-    public String getModelTrim() {
-        return modelTrim;
-    }
-
-    public void setModelTrim(String modelTrim) {
-        this.modelTrim = modelTrim;
-    }
 
     public int getPurchaseYear() {
         return year;

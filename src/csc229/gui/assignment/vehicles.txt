@@ -1,0 +1,15 @@
+Tesla Model S,79990.0
+Toyota Camry,24925.0
+Honda Civic,22050.0
+Ford Mustang,27995.0
+Chevrolet Silverado,33695.0
+Jeep Wrangler,28495.0
+Subaru Outback,26645.0
+BMW 3 Series,41600.0
+Mercedes-Benz C-Class,43950.0
+Audi A4,40200.0
+Hyundai Elantra,20750.0
+Nissan Rogue,27990.0
+Kia Sorento,29990.0
+Mazda CX-5,26140.0
+Volvo XC60,42650.0

@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class InventoryPrinter {
 /**
  * ### In Class Exercise:
-You are given some software that is used to run an inventory printing system for an auto dealership.  The existing code is in the csc229.dealership package:
+You are given some software that is used to run an inventory printing system for an auto dealership.  
+The existing code is in the csc229.dealership package:
 https://github.com/natesuver/CSC229/tree/main/src/csc229/dealership
 
-The code works, but your boss is annoyed that you are not adhering to proper object oriented principles in your design, and it is extremely difficult to maintain.
+The code works, but your boss is annoyed that you are not adhering to proper object oriented principles in your design, 
+and it is extremely difficult to maintain.
 Without changing the function of the code (in other words, the output of the code when you are done should be the same output before you made changes), 
 modify the class files to use a proper inheritance hierarchy.  
 In some cases, you will want to use 2 or 3 levels of inheritance. 
