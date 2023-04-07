@@ -1,8 +1,8 @@
 package csc229.dealership;
 
-public class Ford_F150 extends Vehicle {
+public class Ford_F150 extends Vehicle implements EntertainmentSystem {
 
-	  private String entertainmentSystemManufacturer;
+	private String entertainmentSystemManufacturer;
     private double truckBedLength;
     private double towingCapacity;
 
@@ -26,14 +26,6 @@ public class Ford_F150 extends Vehicle {
         this.truckBedLength = truckBedLength;
         this.towingCapacity = towingCapacity;
     }
-    public String getEntertainmentSystemManufacturer() {
-        return entertainmentSystemManufacturer;
-    }
-
-    public void setEntertainmentSystemManufacturer(String entertainmentSystemManufacturer) {
-        this.entertainmentSystemManufacturer = entertainmentSystemManufacturer;
-    }
-
     
     public double getTruckBedLength() {
         return this.truckBedLength;
@@ -58,7 +50,7 @@ public class Ford_F150 extends Vehicle {
                 "\nTire Brand: " + tireBrand +
                 "\nTransmission Type: " + transmissionType +
                 "\nTop Speed: " + topSpeed +
-                "\nEntertainment System Manufacturer: " + entertainmentSystemManufacturer +
+                "\nEntertainment System Manufacturer: " + getManufacturerName() +
                 "\nSeat Style: " + seatStyle +
                 "\nModel Year: " + modelYear +
                 "\nOil Capacity: " + oilCapacity +
@@ -68,5 +60,15 @@ public class Ford_F150 extends Vehicle {
                 "\nTowing Capacity: " + towingCapacity;
                 
     }
+	@Override
+	public String getManufacturerName() {
+		// TODO Auto-generated method stub
+		return entertainmentSystemManufacturer;
+	}
+	@Override
+	public void setManufacturerName(String name) {
+		// TODO Auto-generated method stub
+		this.entertainmentSystemManufacturer = name;
+	}
 }
 
