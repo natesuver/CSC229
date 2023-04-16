@@ -1,47 +1,35 @@
 package csc229.designpatterns;
 
+import csc229.designpatterns.beverages.HouseBlend;
+import csc229.designpatterns.beverages.Espresso;
+import csc229.designpatterns.beverages.Beverage;
+import csc229.designpatterns.beverages.Decaf;
+
 public class CoffeeOrder {
-    private String size;
-    private String drink;
-    private double price;
+    private Beverage myDrink;
 
     public void OrderMyCoffee(String size, String drink) {
-        this.size = size;
-        this.drink = drink;
-        if (size.equals("small")) {
-            if (drink.equals("coffee")) {
-                this.price = 1.50;
-            } else if (drink.equals("latte") || drink.equals("americano")) {
-                this.price = 3.00;
-            }  else if (drink.equals("espresso"))  {
-                this.price = 2.00;
-            }
-        } else if (size.equals("medium")) {
-            if (drink.equals("coffee")) {
-                this.price = 2.00;
-            } else if (drink.equals("latte") || drink.equals("americano")) {
-                this.price = 3.50;
-            }  else if (drink.equals("espresso"))  {
-                this.price = 2.50;
-            }
-        } else if (size.equals("large")) {
-            if (drink.equals("coffee")) {
-                this.price = 2.50;
-            } else if (drink.equals("latte") || drink.equals("americano")) {
-                this.price = 4.00;
-            }  else if (drink.equals("espresso"))  {
-                this.price = 3.50;
-            }
+        if (drink.equals("coffee")) {
+            myDrink = new HouseBlend();
+            myDrink.setMilk(true);
+        } else if (drink.equals("decaf")) {
+            myDrink = new Decaf();
+            myDrink.setMilk(true);
+        }  else if (drink.equals("espresso"))  {
+            myDrink = new Espresso();
+            myDrink.setMilk(true);
+            myDrink.setWhip(true);
         }
+        myDrink.setSize(size);
     }
 
     public void PrintOrder() {
-        System.out.println("Size: " + this.size + ", Drink: " + this.drink  + ", Price: $" + this.price);
+        myDrink.PrintOrder();
     }
 
     public static void main(String[] args) {
         CoffeeOrder coffee = new CoffeeOrder();
-		coffee.OrderMyCoffee("medium","espresso");
+		coffee.OrderMyCoffee("large","coffee");
         coffee.PrintOrder();
 	}
 }
