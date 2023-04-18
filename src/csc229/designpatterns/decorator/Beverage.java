@@ -12,4 +12,7 @@ public abstract class Beverage {
 	public void PrintOrder() {
         System.out.println("Drink: " + this.getDescription()  + ", Price: $" + String.format("%.2f", this.cost()) );
     }
+	public String GetOrder() {
+        return this.getDescription()  + ", Price: $" + String.format("%.2f", this.cost());
+    }
 }

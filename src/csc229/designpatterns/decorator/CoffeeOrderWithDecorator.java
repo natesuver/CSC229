@@ -1,5 +1,9 @@
 package csc229.designpatterns.decorator;
 
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class CoffeeOrderWithDecorator {
@@ -13,6 +17,13 @@ public class CoffeeOrderWithDecorator {
         myDrink.PrintOrder();
     }
 
+    private static double ComputeOrderTotal(List<Beverage> order) {
+        double totalCost = 0;
+        for (Beverage b: order) {
+            totalCost+=b.cost();
+        }
+        return totalCost;
+    }
     /**
      * @param args
      */
@@ -26,22 +37,28 @@ public class CoffeeOrderWithDecorator {
                 System.out.println("Thank you!  Have a CoffeeTastic day!  Next Customer?");
             }
             else {
+                List<Beverage> customerOrder = new ArrayList<Beverage>();
                 while (true) {
                     System.out.println("What would you like?");
                     input = sc.nextLine();
+                    Beverage myItem=null;
                     boolean beverageFound = true;
                     switch (input) {
                         case "dark roast":
-                            System.out.println("You picked dark roast!");
+                            myItem = new DarkRoast();
+                            System.out.println(String.format("You picked %s!", myItem.getDescription()));
                             break;
                         case "espresso":
-                            System.out.println("You picked espresso!");
+                            myItem = new Espresso();
+                            System.out.println(String.format("You picked %s!", myItem.getDescription()));
                             break;
                         case "house blend":
-                            System.out.println("You picked house blend!");
+                            myItem = new HouseBlend();
+                            System.out.println(String.format("You picked %s!", myItem.getDescription()));
                             break;
                         case "decaf":
-                            System.out.println("You picked decaf!");
+                            myItem = new Decaf();
+                            System.out.println(String.format("You picked %s!", myItem.getDescription()));
                             break;
                         default:
                             System.out.println("We do not have " + input + ".  Pick something else");
@@ -53,20 +70,26 @@ public class CoffeeOrderWithDecorator {
                         input = sc.nextLine();
                         if (input.contains("none")) {
                             System.out.println("Beverage Added to order!");
+                            System.out.println(String.format("Sending %s to Barista",myItem.GetOrder()));
+                            customerOrder.add(myItem);
                             break;
                         }
                         switch (input) {
                             case "milk":
-                                System.out.println("You picked milk!");
+                                myItem = new Milk(myItem);
+                                System.out.println(String.format("You picked %s!", myItem.getDescription()));
                                 break;
                             case "mocha":
-                                System.out.println("You picked mocha!");
+                                myItem = new Mocha(myItem);
+                                System.out.println(String.format("You picked %s!", myItem.getDescription()));
                                 break;
                             case "soy":
-                                System.out.println("You picked soy!");
+                                myItem = new Soy(myItem);
+                                System.out.println(String.format("You picked %s!", myItem.getDescription()));
                                 break;
                             case "whip":
-                                System.out.println("You picked whip!");
+                                myItem = new Whip(myItem);
+                                System.out.println(String.format("You picked %s!", myItem.getDescription()));
                                 break;
                             default:
                                 System.out.println("We do not have " + input + ". Pick something else." );
@@ -78,8 +101,11 @@ public class CoffeeOrderWithDecorator {
                     System.out.println("Would you like another beverage?");
                     input = sc.nextLine();
                     if (input.equals("no")) {
-                        System.out.println("Sending Order to Barista");
-                        System.out.println("Your total is $56.54.  Pickup your order at the counter.  Thank you and come again!  Next Customer?");
+                        
+                        Locale locale = new Locale("en", "US");      
+                        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
+                        double totalCost = ComputeOrderTotal(customerOrder);
+                        System.out.println("Your grand total is " + currencyFormatter.format(totalCost) + ".  Pickup your order at the counter.  Thank you and come again!  Next Customer?");
                         break;
                     }
                 }
