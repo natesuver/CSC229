@@ -27,14 +27,14 @@ public class OrderingSystem {
         Scanner sc = new Scanner(System.in);
         String input;
         while (true) {
-            System.out.println("Welcome to CoffeeBux!  Can I take your order?");
+            System.out.println("Welcome to " + this.store.StoreName() + "!  Can I take your order?");
             input = sc.nextLine();
             if (input.equals("no")) {
-                System.out.println("Thank you!  Have a CoffeeTastic day!  Next Customer?");
+                System.out.println("Thank you!  " + this.store.CompanyTagline() + "  Next Customer?");
             } else {
                 List<Beverage> customerOrder = new ArrayList<Beverage>();
                 while (true) {
-                    System.out.println("What would you like?");
+                    System.out.println("What " + this.store.ProductName() + " would you like?");
                     input = sc.nextLine();
                     boolean beverageFound = true;
                     Beverage myItem = this.store.GetBeverage(input);
@@ -46,11 +46,11 @@ public class OrderingSystem {
                     }
 
                     while (true && beverageFound) {
-                        System.out.println("What condiments you do want?");
+                        System.out.println("What " + this.store.CondimentGenericName() + " you do want?");
                         input = sc.nextLine();
                         if (input.contains("no")) {
-                            System.out.println("Beverage Added to order!");
-                            System.out.println(String.format("Sending %s to Barista", myItem.GetOrder()));
+                            System.out.println(this.store.ProductName() + " Added to order!");
+                            System.out.println(String.format("Sending %s to %s", myItem.GetOrder(), this.store.DrinkCreatorName()));
                             customerOrder.add(myItem);
                             break;
                         }
@@ -61,7 +61,7 @@ public class OrderingSystem {
                             System.out.println(String.format("You picked %s!", myItem.getDescription()));
                         }
                     }
-                    System.out.println("Would you like another beverage?");
+                    System.out.println("Would you like another " + this.store.ProductName() + "?");
                     input = sc.nextLine();
                     if (input.equals("no")) {
 

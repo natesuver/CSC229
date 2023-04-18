@@ -43,5 +43,30 @@ public class coffeeShop extends beverageStore {
                 return null;
         }
     }
+
+    @Override
+    public String StoreName() {
+        return "CoffeeBux";
+    }
+
+    @Override
+    public String ProductName() {
+        return "Delicious Custom Coffee Drink";
+    }
+
+    @Override
+    public String CompanyTagline() {
+       return "Have a CoffeeTastic Day!";
+    }
+
+    @Override
+    public String CondimentGenericName() {
+       return "topping";
+    }
+
+    @Override
+    public String DrinkCreatorName() {
+       return "Barista";
+    }
     
 }
