@@ -1,7 +1,7 @@
 package csc229.designpatterns.decorator;
 
 public class Milk extends CondimentDecorator {
-	public Milk(Beverage beverage) {
+	public Milk(IBeverage beverage) {
 		this.beverage = beverage;
 	}
 

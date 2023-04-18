@@ -1,7 +1,7 @@
 package csc229.designpatterns.decorator;
 
 public class Soy extends CondimentDecorator {
-	public Soy(Beverage beverage) {
+	public Soy(IBeverage beverage) {
 		this.beverage = beverage;
 	}
 

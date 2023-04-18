@@ -2,6 +2,7 @@ package csc229.designpatterns.decorator.store;
 
 import csc229.designpatterns.decorator.Espresso;
 import csc229.designpatterns.decorator.HouseBlend;
+import csc229.designpatterns.decorator.IBeverage;
 import csc229.designpatterns.decorator.Milk;
 import csc229.designpatterns.decorator.Mocha;
 import csc229.designpatterns.decorator.Soy;
@@ -29,7 +30,7 @@ public class coffeeShop extends beverageStore {
     }
 
     @Override
-    public Beverage AddCondiment(Beverage beverage, String type) {
+    public Beverage AddCondiment(IBeverage beverage, String type) {
         switch (type) {
             case "milk":
                 return new Milk(beverage);

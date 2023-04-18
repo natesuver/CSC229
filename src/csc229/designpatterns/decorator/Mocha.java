@@ -2,7 +2,7 @@ package csc229.designpatterns.decorator;
 
 
 public class Mocha extends CondimentDecorator {
-	public Mocha(Beverage beverage) {
+	public Mocha(IBeverage beverage) {
 		this.beverage = beverage;
 	}
  

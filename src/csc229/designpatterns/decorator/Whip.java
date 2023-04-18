@@ -1,7 +1,7 @@
 package csc229.designpatterns.decorator;
 
 public class Whip extends CondimentDecorator {
-	public Whip(Beverage beverage) {
+	public Whip(IBeverage beverage) {
 		this.beverage = beverage;
 	}
  

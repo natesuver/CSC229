@@ -1,6 +1,6 @@
 package csc229.designpatterns.decorator;
 
 public abstract class CondimentDecorator extends Beverage {
-	Beverage beverage;
+	IBeverage beverage;
 	public abstract String getDescription();
 }

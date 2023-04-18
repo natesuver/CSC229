@@ -6,18 +6,18 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-import csc229.designpatterns.decorator.Beverage;
+import csc229.designpatterns.decorator.IBeverage;
 
 public class OrderingSystem {
-    private beverageStore store;
+    private IBeverageStore store;
 
-    public OrderingSystem(beverageStore store) {
+    public OrderingSystem(IBeverageStore store) {
         this.store = store;
     }
 
-    private static double ComputeOrderTotal(List<Beverage> order) {
+    private static double ComputeOrderTotal(List<IBeverage> order) {
         double totalCost = 0;
-        for (Beverage b : order) {
+        for (IBeverage b : order) {
             totalCost += b.cost();
         }
         return totalCost;
@@ -32,12 +32,12 @@ public class OrderingSystem {
             if (input.equals("no")) {
                 System.out.println("Thank you!  " + this.store.CompanyTagline() + "  Next Customer?");
             } else {
-                List<Beverage> customerOrder = new ArrayList<Beverage>();
+                List<IBeverage> customerOrder = new ArrayList<IBeverage>();
                 while (true) {
                     System.out.println("What " + this.store.ProductName() + " would you like?");
                     input = sc.nextLine();
                     boolean beverageFound = true;
-                    Beverage myItem = this.store.GetBeverage(input);
+                    IBeverage myItem = this.store.GetBeverage(input);
                     if (myItem == null) {
                         System.out.println("We do not have " + input + ".  Pick something else");
                         beverageFound = false;
