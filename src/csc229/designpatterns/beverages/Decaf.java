@@ -8,6 +8,6 @@ public class Decaf extends Beverage {
     };
     @Override
     public String getDescription() {
-		return "House Blend";
+		return "decaf";
 	}
 }
